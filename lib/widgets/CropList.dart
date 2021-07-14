@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/BacterialSpot.dart';
+import 'package:leafi/pages/Community/Community.dart';
+import 'package:leafi/pages/Cultivation/TomatoCultivation.dart';
+import 'package:leafi/pages/SelectCrop.dart';
+import 'package:leafi/pages/SelectProcess.dart';
 
 class CropList extends StatefulWidget {
   @override
@@ -15,62 +18,53 @@ class _CropListState extends State<CropList> {
         scrollDirection: Axis.horizontal,
         children: <Widget>[
       GestureDetector (
-        child : CropTiles(name: "Tomato", imageUrl: "ic_burger"),
+        child : CropNames(name: "Tomato", imageUrl: "Tomato"),
 
       onTap: () => Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => BacterialSpot()),
+        MaterialPageRoute(builder: (context) => TomatoCultivation()
+        ),
       ),
       ),
 
           GestureDetector (
-            child : CropTiles(name: "Apple", imageUrl: "ic_sushi"),
+            child : CropNames(name: "Apple", imageUrl: "Apple"),
 
             onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => BacterialSpot()),
+              MaterialPageRoute(builder: (context) => SelectCrop()),
             ),
           ),
 
           GestureDetector (
-            child : CropTiles(name: "Pepper", imageUrl: "ic_pizza"),
+            child : CropNames(name: "Pepper", imageUrl: "Pepper"),
 
             onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => BacterialSpot()),
+              MaterialPageRoute(builder: (context) => SelectProcess()),
             ),
           ),
 
           GestureDetector (
-            child : CropTiles(name: "Ice Cream", imageUrl: "ic_ice_cream"),
+            child : CropNames(name: "Grapes", imageUrl: "Grapes"),
 
             onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => BacterialSpot()),
+              MaterialPageRoute(builder: (context) => SelectProcess()),
             ),
           ),
-
-          // ,slug: "it is a aple"
-          // CropTiles(name: "Apple", imageUrl: "ic_sushi"),
-          // CropTiles(name: "Pepper", imageUrl: "ic_pizza"),
-          // CropTiles(name: "Brinjal", imageUrl: "ic_cake",),
-          // CropTiles(name: "Ice Cream", imageUrl: "ic_ice_cream",),
-          // CropTiles(name: "Pepper", imageUrl: "ic_ice_cream",),
-          // TopMenuTiles(name: "Soft Drink", imageUrl: "ic_soft_drink", slug: ""),
-          // TopMenuTiles(name: "Burger", imageUrl: "ic_burger", slug: ""),
-          // TopMenuTiles(name: "Sushi", imageUrl: "ic_sushi", slug: ""),
         ],
       ),
     );
   }
 }
 
-class CropTiles extends StatelessWidget {
+class CropNames extends StatelessWidget {
   String name;
   String imageUrl;
   // String slug;
 
-  CropTiles(
+  CropNames(
       {Key key,
       @required this.name,
       @required this.imageUrl,
@@ -81,7 +75,6 @@ class CropTiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      // onTap: () {Navigator.push(context, ScaleRoute(page: FoodDetailsPage()));},
       child: Column(
         children: <Widget>[
           Container(
@@ -106,9 +99,9 @@ class CropTiles extends StatelessWidget {
                   height: 50,
                   child: Center(
                       child: Image.asset(
-                    'assets/images/topmenu/' + imageUrl + ".png",
-                    width: 24,
-                    height: 24,
+                    'assets/' + imageUrl + ".png",
+                    width: 42,
+                    height: 42,
                   )),
                 )),
           ),

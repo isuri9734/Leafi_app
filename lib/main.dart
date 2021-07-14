@@ -1,12 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/BacterialSpot.dart';
-import 'package:flutter_app/pages/FoodOrderPage.dart';
-import 'package:flutter_app/pages/HomePage.dart';
-import 'package:flutter_app/pages/SignInPage.dart';
-import 'package:flutter_app/pages/SignUpPage.dart';
+import 'package:get/get.dart';
+import 'package:leafi/pages/Detector.dart';
+import 'package:leafi/pages/HomePage.dart';
+import 'package:leafi/LoadingPage.dart';
 
-void main() => runApp(MaterialApp(
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      title: 'Leafi',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Roboto', hintColor: Color(0xFFd0cece)),
-      home: HomePage(),
-    ));
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+      ),
+      home: LoadingPage(),
+      routes: {
+        LoadingPage.id:(context) => LoadingPage(),
+        HomePage.id:(context) => HomePage(),
+        Detector.id:(context)=> Detector(),
+
+      },
+    );
+  }
+}

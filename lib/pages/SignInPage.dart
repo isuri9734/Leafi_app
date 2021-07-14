@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_app/animation/ScaleRoute.dart';
-import 'package:flutter_app/pages/BacterialSpot.dart';
-import 'package:flutter_app/pages/SignUpPage.dart';
+import 'package:leafi/animation/ScaleRoute.dart';
+import 'package:leafi/pages/SignUpPage.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignInPage extends StatefulWidget {

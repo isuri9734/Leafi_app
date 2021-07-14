@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/animation/ScaleRoute.dart';
-import 'package:flutter_app/pages/SignInPage.dart';
+import 'package:leafi/animation/ScaleRoute.dart';
+import 'package:leafi/pages/SignInPage.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignUpPage extends StatelessWidget {
